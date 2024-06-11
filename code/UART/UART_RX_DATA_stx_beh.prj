@@ -1,2 +1,0 @@
-verilog isim_temp "UART_RX_DATA.v"
-verilog isim_temp "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

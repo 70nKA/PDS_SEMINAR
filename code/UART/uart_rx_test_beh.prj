@@ -1,3 +1,0 @@
-verilog work "uart_rx.v"
-verilog work "uart_rx_test.v"
-verilog work "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
