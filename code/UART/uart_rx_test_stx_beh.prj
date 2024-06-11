@@ -1,0 +1,3 @@
+verilog isim_temp "uart_rx.v"
+verilog isim_temp "uart_rx_test.v"
+verilog isim_temp "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
