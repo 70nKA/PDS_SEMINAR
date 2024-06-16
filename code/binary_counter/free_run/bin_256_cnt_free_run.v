@@ -32,11 +32,11 @@ module bin_256_cnt_free_run
 
 	always@(posedge clk, posedge reset)
 		if(reset || max_tick)
-			n_reg <= 0;
+			n_reg <= 1;
 		else
 			n_reg <= n_next;
 	
 	assign q = n_reg;
 	assign n_next = n_reg + 1;
-	assign max_tick = (n_reg == n_conut - 1) ? 1 : 0;
+	assign max_tick = (n_reg == n_conut) ? 1 : 0;
 endmodule
