@@ -27,11 +27,10 @@ module mod_uart_rx
 	input wire clk, reset,
 	input wire rx,
 	output wire [7:0] rx_data,
-	output wire rx_done,
-	output reg baud_rate_sample_clk
+	output wire rx_done
    );
 
-	//reg baud_rate_sample_clk;
+	reg baud_rate_sample_clk;
 	
 	wire [7:0] q;
 	

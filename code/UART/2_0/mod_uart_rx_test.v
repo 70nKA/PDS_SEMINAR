@@ -32,7 +32,6 @@ module mod_uart_rx_test;
 	// Outputs
 	wire [7:0] rx_data;
 	wire rx_done;
-	wire baud_rate_sample_clk;
 
 	// Instantiate the Unit Under Test (UUT)
 	mod_uart_rx uut (
@@ -40,8 +39,7 @@ module mod_uart_rx_test;
 		.reset(reset), 
 		.rx(rx), 
 		.rx_data(rx_data), 
-		.rx_done(rx_done),
-		.baud_rate_sample_clk(baud_rate_sample_clk)
+		.rx_done(rx_done)
 	);
 
 	initial begin
