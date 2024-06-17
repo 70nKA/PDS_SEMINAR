@@ -31,7 +31,9 @@ module bin_256_cnt_free_run
 	wire max_tick;
 
 	always@(posedge clk, posedge reset)
-		if(reset || max_tick)
+		if(reset == 1'b1)
+			n_reg <= 1;
+		else if(max_tick == 1'b1)
 			n_reg <= 1;
 		else
 			n_reg <= n_next;

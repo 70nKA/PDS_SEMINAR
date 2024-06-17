@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/ise/code/binary_counter/bin_256_cnt_free_run.xst" -ofn "/home/ise/code/binary_counter/bin_256_cnt_free_run.syr" 
