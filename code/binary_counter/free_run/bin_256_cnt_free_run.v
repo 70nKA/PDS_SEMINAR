@@ -22,13 +22,11 @@ module bin_256_cnt_free_run
 	(
 		input wire clk, reset,
 		input [7:0] n_conut,
-		output wire [7:0] q
+		output wire max_tick
 	);
 	
 	reg [7:0] n_reg;
 	wire [7:0] n_next;
-	
-	wire max_tick;
 
 	always@(posedge clk, posedge reset)
 		if(reset == 1'b1)
@@ -37,8 +35,7 @@ module bin_256_cnt_free_run
 			n_reg <= 1;
 		else
 			n_reg <= n_next;
-	
-	assign q = n_reg;
+
 	assign n_next = n_reg + 1;
 	assign max_tick = (n_reg == n_conut) ? 1 : 0;
 endmodule
