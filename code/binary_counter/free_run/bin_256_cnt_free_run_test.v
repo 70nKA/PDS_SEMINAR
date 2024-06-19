@@ -30,14 +30,14 @@ module bin_256_cnt_free_run_test;
 	reg [7:0] n_conut;
 
 	// Outputs
-	wire [7:0] q;
+	wire max_tick;
 
 	// Instantiate the Unit Under Test (UUT)
 	bin_256_cnt_free_run uut (
 		.clk(clk), 
 		.reset(reset), 
 		.n_conut(n_conut), 
-		.q(q)
+		.max_tick(max_tick)
 	);
 
 	initial begin
@@ -50,7 +50,7 @@ module bin_256_cnt_free_run_test;
 		#100;
         
 		// Add stimulus here
-		n_conut = 163;
+		n_conut = 10;
 		reset = 1;
 		#1;
 		reset = 0;
