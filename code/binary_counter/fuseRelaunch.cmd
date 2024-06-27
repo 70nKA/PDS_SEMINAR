@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/ise/code/binary_counter/binary_16b_counter_free_running_test_isim_beh.exe" -prj "/home/ise/code/binary_counter/binary_16b_counter_free_running_test_beh.prj" "work.binary_16b_counter_free_running_test" "work.glbl" 
