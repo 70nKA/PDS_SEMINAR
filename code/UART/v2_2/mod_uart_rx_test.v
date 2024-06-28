@@ -31,6 +31,7 @@ module mod_uart_rx_test;
 
 	// Outputs
 	wire [7:0] rx_reg;
+	wire flag_done;
 	
 	reg baud_rate;
 
@@ -38,7 +39,8 @@ module mod_uart_rx_test;
 	mod_uart_rx uut (
 		.clk(clk), 
 		.reset(reset), 
-		.rx(rx), 
+		.rx(rx),
+		.flag_done(flag_done),
 		.rx_reg(rx_reg)
 	);
 
@@ -113,6 +115,8 @@ module mod_uart_rx_test;
 		rx = 1;
 		#26041.7;
 		#26041.7;
+		#52083.4;
+		#52083.4;
 		
 		$stop;
 	end
@@ -121,4 +125,4 @@ module mod_uart_rx_test;
 	always #26041.7 baud_rate = ~baud_rate;
       
 endmodule
-
+

@@ -22,11 +22,13 @@ module mod_uart_rx
 	(
 		input wire clk, reset,
 		input wire rx,
+		output reg flag_done,
 		output reg [7:0]	rx_reg
    );
 	
 	wire max_tick;
-	wire flag_done;
+	wire rx_done_tick;
+	
 	wire [7:0] dout;
 	
 	binary_16b_counter_free_running sample_rate
@@ -43,14 +45,25 @@ module mod_uart_rx
 			.reset(reset),
 			.rx(rx),
 			.s_tick(max_tick),
-			.rx_done_tick(flag_done),
+			.rx_done_tick(rx_done_tick),
 			.dout(dout)
 		);
 		
-	always@(posedge flag_done, posedge reset)
+	always@(posedge clk, posedge reset)
 		if(reset)
-			rx_reg <= 0;
+			begin
+				rx_reg <= 0;
+				flag_done <= 0;
+			end
+		else if(rx_done_tick)
+			begin
+				rx_reg <= dout;
+				flag_done <= 1;
+			end
 		else
-			rx_reg <= dout;
+			begin
+				rx_reg <= rx_reg;
+				flag_done <= flag_done;
+			end
 
-endmodule
+endmodule
