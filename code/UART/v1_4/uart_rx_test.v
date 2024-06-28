@@ -35,6 +35,7 @@ module uart_rx_test;
 	wire [7:0] dout;
 	
 	reg baud_rate;
+	reg [7:0] sample_rate;
 
 	// Instantiate the Unit Under Test (UUT)
 	uart_rx uut (
@@ -54,6 +55,7 @@ module uart_rx_test;
 		s_tick = 0;
 		
 		baud_rate = 0;
+		sample_rate = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
@@ -70,7 +72,7 @@ module uart_rx_test;
 		#52083.4;
 		rx = 0;
 		#52083.4;
-		rx = 1;
+		rx = 0;
 		#52083.4;
 		rx = 0;
 		#52083.4;
@@ -93,7 +95,23 @@ module uart_rx_test;
 	
 	always #10 clk = ~clk;
 	always #26041.7 baud_rate = ~baud_rate;
-	always #1627.5 s_tick = ~s_tick;
+
+	always @(posedge clk, posedge reset) 
+		if (reset)
+			begin
+				s_tick <= 0;
+				sample_rate <= 0;
+			end
+		else if(sample_rate == 163)
+			begin
+				sample_rate <= 0;
+				s_tick <= 1;
+			end
+		else
+			begin
+				sample_rate <= sample_rate + 1;
+				s_tick <= 0;
+			end
 	
 	initial begin
         $monitor("Time=%0d, rx=%b, state=%b, b_reg=%b, dout=%b, rx_done_tick=%b",
