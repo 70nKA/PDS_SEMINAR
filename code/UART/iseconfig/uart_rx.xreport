@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-06-27T08:45:35</DateModified>
+  <DateModified>2024-06-27T10:14:42</DateModified>
   <ModuleName>uart_rx</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/ise/code/UART/iseconfig/uart_rx.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/ise/code/UART</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/ise/code/UART/</ImplementationReportsDirectory>
   <DateInitialized>2024-06-27T08:45:34</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
