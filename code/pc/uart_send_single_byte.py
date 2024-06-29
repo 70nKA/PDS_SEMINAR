@@ -3,7 +3,7 @@ import serial
 # Configure the serial port (replace 'COM3' with your serial port name)
 ser = serial.Serial(
     port='COM3',        # Use your serial port
-    baudrate=19200,     # Set your baud rate
+    baudrate=230400,    # Set your baud rate
     timeout=1           # Set a timeout value (1 second in this case)
 )
 
