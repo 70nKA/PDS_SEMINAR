@@ -5,5 +5,29 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/ise/code/UART/advanced_rx_module/v1/v1_1/uart_rx.v" Line 107: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/ise/code/UART/advanced_rx_module/v1/v1_1/uart_rx.v" Line 109: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/ise/code/UART/advanced_rx_module/v1/v1_1/uart_rx.v" Line 145: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/ise/code/UART/advanced_rx_module/v1/v1_1/uart_rx.v" Line 147: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/ise/code/UART/advanced_rx_module/v1/v1_1/uart_rx.v" Line 107: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/ise/code/UART/advanced_rx_module/v1/v1_1/uart_rx.v" Line 109: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/ise/code/UART/advanced_rx_module/v1/v1_1/uart_rx.v" Line 145: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/ise/code/UART/advanced_rx_module/v1/v1_1/uart_rx.v" Line 147: Concatenation with unsized literal; will interpret as 32 bits
+</msg>
+
 </messages>
 
