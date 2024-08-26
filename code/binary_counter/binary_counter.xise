@@ -15,7 +15,7 @@
   <version xil_pn:ise_version="14.7" xil_pn:schema_version="2"/>
 
   <files>
-    <file xil_pn:name="uart/baud_rate_115200/v1/uart_baud_rate_gen.v" xil_pn:type="FILE_VERILOG">
+    <file xil_pn:name="uart/baud_rate_115200/v2/uart_baud_rate_gen.v" xil_pn:type="FILE_VERILOG">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="2"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="2"/>
     </file>
@@ -23,11 +23,11 @@
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="1"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="1"/>
     </file>
-    <file xil_pn:name="uart/baud_rate_115200/v1/uart_baud_rate_gen_test.v" xil_pn:type="FILE_VERILOG">
+    <file xil_pn:name="uart/baud_rate_115200/v2/uart_baud_rate_gen_test.v" xil_pn:type="FILE_VERILOG">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="3"/>
-      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="18"/>
-      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="18"/>
-      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="18"/>
+      <association xil_pn:name="PostMapSimulation" xil_pn:seqID="22"/>
+      <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="22"/>
+      <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="22"/>
     </file>
   </files>
 
@@ -135,7 +135,7 @@
     <property xil_pn:name="Ignore User Timing Constraints Map" xil_pn:value="false" xil_pn:valueState="default"/>
     <property xil_pn:name="Ignore User Timing Constraints Par" xil_pn:value="false" xil_pn:valueState="default"/>
     <property xil_pn:name="Implementation Top" xil_pn:value="Module|uart_baud_rate_gen" xil_pn:valueState="non-default"/>
-    <property xil_pn:name="Implementation Top File" xil_pn:value="uart/baud_rate_115200/v1/uart_baud_rate_gen.v" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="Implementation Top File" xil_pn:value="uart/baud_rate_115200/v2/uart_baud_rate_gen.v" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Implementation Top Instance Path" xil_pn:value="/uart_baud_rate_gen" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Include 'uselib Directive in Verilog File" xil_pn:value="false" xil_pn:valueState="default"/>
     <property xil_pn:name="Include SIMPRIM Models in Verilog File" xil_pn:value="false" xil_pn:valueState="default"/>

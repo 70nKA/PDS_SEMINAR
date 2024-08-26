@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-08-21T12:32:51</DateModified>
+  <DateModified>2024-08-21T15:47:15</DateModified>
   <ModuleName>uart_baud_rate_gen</ModuleName>
-  <SummaryTimeStamp>2024-08-21T08:00:25</SummaryTimeStamp>
+  <SummaryTimeStamp>2024-08-21T14:06:55</SummaryTimeStamp>
   <SavedFilePath>/home/ise/code/binary_counter/iseconfig/uart_baud_rate_gen.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/ise/code/binary_counter</ImplementationReportsDirectory>
-  <DateInitialized>2024-08-21T05:51:37</DateInitialized>
+  <DateInitialized>2024-08-21T12:44:19</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>
