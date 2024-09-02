@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "/home/ise/code/sobel/conv.xst" -ofn "/home/ise/code/sobel/conv.syr" 
+xst -intstyle ise -ifn "/home/ise/code/sobel/conv.xst" -ofn "/home/ise/code/sobel/conv.syr" 
