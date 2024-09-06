@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-09-06T10:55:50</DateModified>
+  <DateModified>2024-09-06T11:01:59</DateModified>
   <ModuleName>baud_rate_115200_gen</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/ise/code/tu/iseconfig/binary_8b_counter.xreport</SavedFilePath>
