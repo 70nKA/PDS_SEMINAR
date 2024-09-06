@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Interface Version="1" Minor="1">
+	<Ifc Id="ROOT" Top="1">
+		<Port Id="clk" Dir="IN"/>
+		<Port Id="VGA_HS" Dir="OUT"/>
+		<Port Id="reset" Dir="IN"/>
+		<Port Id="VGA_BULE" Dir="OUT"/>
+		<Port Id="VGA_VS" Dir="OUT"/>
+		<Port Id="rx" Dir="IN"/>
+		<Port Id="VGA_RED" Dir="OUT"/>
+		<Port Id="VGA_GREEN" Dir="OUT"/>
+	</Ifc>
+</Interface>
+

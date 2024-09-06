@@ -22,8 +22,11 @@ module main
 	(
 		input clk, reset,
 		input rx,
-		output wire [7:0] sobel_data,
-		output wire sobel_data_valid
+		output wire VGA_HS,
+		output wire VGA_VS,
+		output wire VGA_RED,
+		output wire VGA_GREEN,
+		output wire VGA_BULE
    );
 	
 	wire [7:0] read_data;
@@ -36,6 +39,26 @@ module main
 	
 	wire [71:0] line_buff_data;
 	wire line_buff_data_valid;
+	
+	wire [7:0] sobel_data;
+	wire sobel_data_valid;
+	
+	wire vga_bite;
+	
+	reg clk_count;
+	reg clk_vga;
+	
+	initial
+		begin
+			clk_count <= 0;
+			clk_vga <= 0;
+		end
+	
+	always@(posedge clk)
+		begin
+			clk_vga <= clk_count;
+			clk_count <= clk_count + 1;
+		end
 	
 	uart_rx_115200_mod uart_rx_mod
 	(
@@ -74,5 +97,58 @@ module main
         .o_convolved_data(sobel_data),
         .o_convolved_data_valid(sobel_data_valid)
     );
+	 
+	sobel2black_white sobel2black_white_mod
+	(
+		.clk(clk), .reset(reset),
+		.data(sobel_data),
+		.data_valid(sobel_data_valid),
+		.bite(vga_bite)
+	);
+	 
+	 VGA_controller VGA_con_mod
+	 (
+		.clk(clk_vga), 
+		.rst(reset), 
+		.o_hs(VGA_HS),
+		.o_vs(VGA_VS),
+		.o_x(),
+		.o_y()
+	);
 
+	VGA_image VGA_image_mod
+    (
+        .color_in(vga_bite),
+        .i_VGA_RED(VGA_RED),
+        .i_VGA_GREEN(VGA_GREEN),
+        .i_VGA_BLUE(VGA_BULE)
+    );
+
+endmodule
+
+module sobel2black_white
+	(
+		input clk, reset,
+		input wire [7:0] data,
+		input wire data_valid,
+		output wire bite
+	);
+	
+	reg [7:0] bite_reg, bite_next;
+	
+	always@(posedge clk, posedge reset)
+		if(reset)
+			bite_reg <= 0;
+		else
+			bite_reg <= bite_next;
+	
+	always@*
+		begin
+			bite_next = bite_reg;
+			
+			if(data_valid)
+				bite_next = data;
+		end
+
+	assign bite = (bite_reg > 100) ? 0 : 1;
 endmodule

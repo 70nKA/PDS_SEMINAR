@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
+
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
-// 
 // Create Date:    21:13:12 08/30/2024 
 // Design Name: 
 // Module Name:    sobel 
@@ -18,6 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
+
 module sobel
     (
         input i_clk,
@@ -52,10 +53,12 @@ module sobel
     reg convolved_data_int_valid;
 
     always @(posedge i_clk) begin
-        for(i = 0; i < 9; i = i + 1) begin
+        i = 0;  // Initialize loop variable
+        while (i < 9) begin
             // Assign each 11-bit segment in the vectors for multiplication
             multData1[i*11 +: 11] <= $signed(kernel1[i*8 +: 8]) * $signed({1'b0, i_pixel_data[i*8 +: 8]});
             multData2[i*11 +: 11] <= $signed(kernel2[i*8 +: 8]) * $signed({1'b0, i_pixel_data[i*8 +: 8]});
+            i = i + 1;  // Increment loop variable
         end
         multDataValid <= i_pixel_data_valid;
     end
@@ -64,10 +67,12 @@ module sobel
         sumDataInt1 = 0;
         sumDataInt2 = 0;
         
-        for(i = 0; i < 9; i = i + 1) begin
+        i = 0;  // Initialize loop variable
+        while (i < 9) begin
             // Summing each 11-bit segment in the vectors
             sumDataInt1 = $signed(sumDataInt1) + $signed(multData1[i*11 +: 11]);
             sumDataInt2 = $signed(sumDataInt2) + $signed(multData2[i*11 +: 11]);
+            i = i + 1;  // Increment loop variable
         end
     end
 
@@ -85,12 +90,13 @@ module sobel
 
     assign convolved_data_int = convolved_data_int1 + convolved_data_int2;
 
-    always @(posedge i_clk)
-        if(convolved_data_int > 4000)
+    always @(posedge i_clk) begin
+        if (convolved_data_int > 4000) begin
             o_convolved_data <= 8'hff;
-        else begin
+        end else begin
             o_convolved_data <= 8'h00;
             o_convolved_data_valid <= convolved_data_int_valid;
         end
+    end
 
-endmodule
+endmodule
