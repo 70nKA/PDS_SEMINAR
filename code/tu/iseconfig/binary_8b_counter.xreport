@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-09-06T10:40:12</DateModified>
+  <DateModified>2024-09-06T10:46:59</DateModified>
   <ModuleName>binary_16b_counter</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/ise/code/tu/iseconfig/binary_8b_counter.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/ise/code/tu/</ImplementationReportsDirectory>
-  <DateInitialized>2024-09-06T10:40:11</DateInitialized>
+  <DateInitialized>2024-09-06T10:45:48</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>
