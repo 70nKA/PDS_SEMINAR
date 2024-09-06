@@ -22,8 +22,7 @@ module main
 	(
 		input clk, reset,
 		input rx,
-		output wire [8:0] line_counter,
-		output wire [71:0] sobel_data,
+		output wire [7:0] sobel_data,
 		output wire sobel_data_valid
    );
 	
@@ -34,6 +33,9 @@ module main
 
 	wire read_req;
 	wire read_data_valid;
+	
+	wire [71:0] line_buff_data;
+	wire line_buff_data_valid;
 	
 	uart_rx_115200_mod uart_rx_mod
 	(
@@ -49,7 +51,7 @@ module main
 		.clk(clk), .reset(reset),
 		.rx_fifo_capacity(rx_fifo_capacity),
 		.interrupt(interrupt),
-		.line_counter(line_counter),
+		.line_counter(),
 		.read_req(read_req),
 		.read_data_valid(read_data_valid)
 	);
@@ -59,9 +61,18 @@ module main
 		.i_clk(clk), .i_rst(reset),
 		.i_pixel_data(read_data),
 		.i_pixel_data_valid(read_data_valid),
-		.o_pixel_data(sobel_data),
-		.o_pixel_data_valid(sobel_data_valid),
+		.o_pixel_data(line_buff_data),
+		.o_pixel_data_valid(line_buff_data_valid),
 		.o_intr(interrupt)
 	);
+	
+	sobel sobel_mod
+    (
+        .i_clk(clk),
+        .i_pixel_data(line_buff_data),
+        .i_pixel_data_valid(line_buff_data_valid),
+        .o_convolved_data(sobel_data),
+        .o_convolved_data_valid(sobel_data_valid)
+    );
 
 endmodule
