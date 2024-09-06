@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-09-06T05:43:18</DateModified>
+  <DateModified>2024-09-06T05:37:02</DateModified>
   <ModuleName>uart_fifo2line_buffer</ModuleName>
-  <SummaryTimeStamp>2024-09-06T05:42:47</SummaryTimeStamp>
+  <SummaryTimeStamp>2024-09-06T05:36:29</SummaryTimeStamp>
   <SavedFilePath>/home/ise/code/UART/iseconfig/uart_rx_test.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/ise/code/UART</ImplementationReportsDirectory>
   <DateInitialized>2024-09-06T05:35:13</DateInitialized>
