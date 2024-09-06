@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-09-06T10:08:44</DateModified>
+  <DateModified>2024-09-06T10:16:45</DateModified>
   <ModuleName>rx_circuit</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2024-09-06T10:16:40</SummaryTimeStamp>
   <SavedFilePath>/home/ise/code/uart/iseconfig/rx_circuit.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/ise/code/uart</ImplementationReportsDirectory>
   <DateInitialized>2024-09-06T10:08:43</DateInitialized>

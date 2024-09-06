@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    10:08:43 09/06/2024 
+// Create Date:    07:26:40 06/27/2024 
 // Design Name: 
-// Module Name:    rx_circuit 
+// Module Name:    uart_rx 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,21 +18,17 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module rx_circuit
+module uart_rx
 	#(
-		parameter DBIT = 8,
-		parameter SB_TICK = 16
+	parameter DBIT = 8,
+				 SB_TICK = 16
 	)
 	(
-		input wire clk, reset,
-		input wire rx, s_tick,
-		output reg rx_done_tick,
-		output wire [7:0] o_rx_data
+	input wire clk, reset,
+	input wire rx, s_tick,
+	output reg rx_done_tick,
+	output wire [7:0] dout
 	);
-	
-	localparam
-		FULL_BYTE_TICK = 16,
-		MIDDLE_BYTE_TICK = 8;
 	
 	localparam [1:0]
 		idle = 2'b00,
@@ -77,7 +73,7 @@ module rx_circuit
 						end
 				start:
 					if(s_tick)
-						if(s_reg == MIDDLE_BYTE_TICK - 1)
+						if(s_reg == 7)
 							begin
 								state_next = data; 
 								s_next = 0; 
@@ -87,7 +83,7 @@ module rx_circuit
 							s_next = s_reg + 1;
 				data:
 					if(s_tick)
-						if(s_reg == FULL_BYTE_TICK - 1)
+						if(s_reg == 15)
 							begin
 								s_next = 0;
 								b_next = {rx, b_reg[7:1]};
@@ -111,5 +107,5 @@ module rx_circuit
 			endcase
 		end
 
-	assign o_rx_data = b_reg;
+	assign dout = b_reg;
 endmodule
