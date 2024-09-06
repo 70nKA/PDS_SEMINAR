@@ -123,13 +123,16 @@ module uart_fifo2line_buffer
 										byte_counter_next = byte_counter + 1;
 									end
 								2047: begin
+										read_req_next = 0;
+
+										byte_counter_next = byte_counter + 1;
+									end
+								2049: begin
 										state_next = s_main;
 										state_import_next = s_idle;
-											
-										read_req_next = 0;
-											
+										
 										line_counter_next = line_counter_reg + 1;
-										byte_counter_next = 0;
+										byte_counter_next = 0;										
 									end
 								default: byte_counter_next = byte_counter + 1;
 							endcase
@@ -181,10 +184,13 @@ module uart_fifo2line_buffer
 											byte_counter_next = byte_counter + 1;
 										end
 									511: begin
-											state_import_next = s_idle;
-												
 											read_req_next = 0;
 												
+											byte_counter_next = byte_counter + 1;
+										end
+									513: begin
+											state_import_next = s_idle;
+											
 											line_counter_next = line_counter_reg + 1;
 											byte_counter_next = 0;
 										end
@@ -203,7 +209,7 @@ module uart_fifo2line_buffer
 
 											byte_counter_next = byte_counter + 1;
 										end
-									511: begin
+									513: begin
 											state_next = s_init;
 											state_import_next = s_idle;
 
