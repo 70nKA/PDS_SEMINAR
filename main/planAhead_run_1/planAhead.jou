@@ -1,0 +1,52 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Fri Sep  6 08:51:28 2024
+# Process ID: 16968
+# Log file: /home/ise/code/main/planAhead_run_1/planAhead.log
+# Journal file: /home/ise/code/main/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /home/ise/code/main/pa.fromNetlist.tcl
+startgroup
+set_property package_pin C9 [get_ports clk]
+endgroup
+set_property iostandard LVTTL [get_ports [list clk]]
+set_property iostandard LVTTL [get_ports [list reset]]
+set_property iostandard LVTTL [get_ports [list rx]]
+set_property iostandard LVCMOS25 [get_ports [list VGA_BULE]]
+set_property iostandard LVCMOS25 [get_ports [list VGA_GREEN]]
+set_property iostandard LVTTL [get_ports [list VGA_BULE]]
+set_property iostandard LVTTL [get_ports [list VGA_GREEN]]
+set_property iostandard LVTTL [get_ports [list VGA_HS]]
+set_property iostandard LVTTL [get_ports [list VGA_RED]]
+set_property iostandard LVTTL [get_ports [list VGA_VS]]
+set_property iostandard LVCMOS33 [get_ports [list clk]]
+startgroup
+set_property package_pin H14 [get_ports VGA_RED]
+endgroup
+startgroup
+set_property package_pin H15 [get_ports VGA_GREEN]
+endgroup
+startgroup
+set_property package_pin G15 [get_ports VGA_BULE]
+endgroup
+startgroup
+set_property package_pin F15 [get_ports VGA_HS]
+endgroup
+startgroup
+set_property package_pin F14 [get_ports VGA_VS]
+endgroup
+startgroup
+set_property package_pin R7 [get_ports rx]
+endgroup
+startgroup
+set_property package_pin L13 [get_ports reset]
+endgroup
+set_property pulltype PULLUP [get_ports [list reset]]
+set_property slew FAST [get_ports [list VGA_BULE]]
+set_property slew FAST [get_ports [list VGA_GREEN]]
+set_property slew FAST [get_ports [list VGA_HS]]
+set_property slew FAST [get_ports [list VGA_RED]]
+set_property slew FAST [get_ports [list VGA_VS]]
+save_constraints
