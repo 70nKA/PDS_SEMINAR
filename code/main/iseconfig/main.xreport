@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-09-06T12:33:03</DateModified>
+  <DateModified>2024-09-11T11:07:43</DateModified>
   <ModuleName>main</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/ise/code/main/iseconfig/main.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/ise/code/main</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/ise/code/main/</ImplementationReportsDirectory>
   <DateInitialized>2024-09-06T12:33:03</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
