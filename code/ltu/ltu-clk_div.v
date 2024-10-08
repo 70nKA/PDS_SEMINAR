@@ -22,7 +22,24 @@ module ltu_clk_div
 	(
 		input wire clk, reset,
 		input wire [1:0] LTUCLKDIVSET,
+		// 
+		// Description LTUCLKDIVSET:
+		//
+		// register for configuring clk devider:
+		//	LTUCLKDIVSET == 00 => DIV == 2
+		//	LTUCLKDIVSET == 01 => DIV == 4
+		//	LTUCLKDIVSET == 10 => DIV == 8
+		//	LTUCLKDIVSET == 11 => DIV == 16
+		//
 		output wire [1:0] LTUCLKDIVGET
+		// 
+		// Description LTUCLKDIVGET:
+		//
+		// module output register:
+		//	LTUCLKDIVGET[1] == 0 => LTUCLKDIVGET[0] vaule is currently invaild
+		//	LTUCLKDIVGET[1] == 1 => LTUCLKDIVGET[0] vaule is currently vaild
+		//	LTUCLKDIVGET[0] => new clk source
+		//
 	);
 	
 	localparam
