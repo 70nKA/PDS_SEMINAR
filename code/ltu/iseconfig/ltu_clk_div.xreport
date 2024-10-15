@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-10-08T13:57:00</DateModified>
-  <ModuleName>ltu_clk_div_test</ModuleName>
+  <DateModified>2024-10-15T11:45:24</DateModified>
+  <ModuleName>ltu_clk_div</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/ise/code/ltu/iseconfig/ltu_clk_div.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/ise/code/ltu</ImplementationReportsDirectory>
-  <DateInitialized>2024-10-08T13:54:42</DateInitialized>
+  <ImplementationReportsDirectory>/home/ise/code/ltu/</ImplementationReportsDirectory>
+  <DateInitialized>2024-10-15T11:45:24</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>
