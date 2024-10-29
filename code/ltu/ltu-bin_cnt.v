@@ -18,6 +18,30 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
+module free_running
+	(
+		input wire clk, reset,
+		input wire enable,
+		input wire [7:0] max_cnt,
+		output wire tick
+	);
+
+	reg [7:0] counter;
+
+	always @(posedge clk, posedge reset, negedge enable)
+		if(~enable)
+			counter <= 0;
+		else
+			if (reset) 
+				counter <= 0;
+			else if(counter == max_cnt)
+				counter <= 0;
+			else
+				counter <= counter + 1;
+
+	assign tick = (counter == max_cnt) ? 1'b1 : 1'b0;	
+endmodule
+
 module free_running_stable
 	(
 		input wire clk, reset,
