@@ -13,5 +13,6 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# run 1.00us
+# run all
+Stopped at time : 10200 ns :  in File "/home/ise/code/ltu/free_running_test.v" Line 66 
 # exit 0

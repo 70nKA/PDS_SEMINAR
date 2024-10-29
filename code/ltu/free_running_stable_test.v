@@ -4,7 +4,7 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   14:10:04 10/29/2024
+// Create Date:   13:07:11 10/15/2024
 // Design Name:   free_running
 // Module Name:   /home/ise/code/ltu/free_running_test.v
 // Project Name:  ltu
@@ -22,7 +22,7 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module free_running_test;
+module free_running_stable_test;
 
 	// Inputs
 	reg clk;
@@ -31,14 +31,16 @@ module free_running_test;
 	reg [7:0] max_cnt;
 
 	// Outputs
+	wire stable;
 	wire tick;
 
 	// Instantiate the Unit Under Test (UUT)
-	free_running uut (
+	free_running_stable uut (
 		.clk(clk), 
 		.reset(reset), 
 		.enable(enable), 
 		.max_cnt(max_cnt), 
+		.stable(stable), 
 		.tick(tick)
 	);
 
@@ -65,7 +67,8 @@ module free_running_test;
 		#5000;
 		$stop;
 	end
-   
+	
 	always #10 clk = ~clk;
+      
 endmodule
 

@@ -23,6 +23,30 @@ module free_running
 		input wire clk, reset,
 		input wire enable,
 		input wire [7:0] max_cnt,
+		output wire tick
+	);
+
+	reg [7:0] counter;
+
+	always @(posedge clk, posedge reset, negedge enable)
+		if(~enable)
+			counter <= 0;
+		else
+			if (reset) 
+				counter <= 0;
+			else if(counter == max_cnt)
+				counter <= 0;
+			else
+				counter <= counter + 1;
+
+	assign tick = (counter == max_cnt) ? 1'b1 : 1'b0;	
+endmodule
+
+module free_running_stable
+	(
+		input wire clk, reset,
+		input wire enable,
+		input wire [7:0] max_cnt,
 		output wire stable,
 		output wire tick
 	);
@@ -47,7 +71,7 @@ module free_running
 	assign stable = (state_reg == state_transit) ? 1'b0 : 1'b1;
 	assign tick = tick_reg;
 
-	always @(posedge clk, posedge enable, posedge reset) 
+	always @(posedge clk, posedge reset, negedge enable) 
 		if(~enable)
 			begin
 				state_reg <= state_transit;
@@ -100,7 +124,7 @@ module free_running
 							end
 						else
 							begin
-								counter_next <= counter_reg + 1;
+								counter_next = counter_reg + 1;
 								tick_next = 0;
 							end
 					else
