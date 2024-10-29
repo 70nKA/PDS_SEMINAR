@@ -100,7 +100,7 @@ module free_running_stable
 							end
 						else
 							begin
-								counter_next <= counter_reg + 1;
+								counter_next = counter_reg + 1;
 								tick_next = 0;
 							end
 					else
