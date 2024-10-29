@@ -22,7 +22,7 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module free_running_test;
+module free_running_stable_test;
 
 	// Inputs
 	reg clk;
@@ -35,7 +35,7 @@ module free_running_test;
 	wire tick;
 
 	// Instantiate the Unit Under Test (UUT)
-	free_running uut (
+	free_running_stable uut (
 		.clk(clk), 
 		.reset(reset), 
 		.enable(enable), 
@@ -59,8 +59,13 @@ module free_running_test;
 		#100;
 		
 		reset = 0;
+		
+		#5000;
         
 		// Add stimulus here
+		max_cnt = 28;
+		#5000;
+		$stop;
 	end
 	
 	always #10 clk = ~clk;
