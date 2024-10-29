@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/ise/code/bitwise/majority_test_isim_beh.exe" -prj "/home/ise/code/bitwise/majority_test_beh.prj" "work.majority_test" "work.glbl" 
