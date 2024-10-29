@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module free_running
+module free_running_stable
 	(
 		input wire clk, reset,
 		input wire enable,
@@ -47,7 +47,7 @@ module free_running
 	assign stable = (state_reg == state_transit) ? 1'b0 : 1'b1;
 	assign tick = tick_reg;
 
-	always @(posedge clk, posedge enable, posedge reset) 
+	always @(posedge clk, posedge reset, negedge enable) 
 		if(~enable)
 			begin
 				state_reg <= state_transit;
